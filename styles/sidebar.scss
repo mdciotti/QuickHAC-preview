@@ -1,0 +1,86 @@
+.sidebar {
+	flex: 0 0 auto;
+	width: $sidebar-width;
+	background-color: $sidebar-bg;
+	color: $sidebar-text;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+
+	.views li a {
+		line-height: 2;
+
+		i {
+			font-size: 2em;
+			line-height: 0;
+			vertical-align: middle;
+		}
+		.title {
+			vertical-align: middle;
+		}
+	}
+
+	h2 {
+		font-weight: $font-weight-heavy;
+		color: $sidebar-heading;
+		border-bottom: thin solid $sidebar-separator;
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin: $gutter-width $gutter-width 0 $gutter-width;
+	}
+
+	& > ul {
+		margin: ($gutter-width / 2) 0 0 0;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			a {
+				display: block;
+				padding: ($gutter-width / 2) $gutter-width;
+				font-size: $font-size-base;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				color: inherit;
+				text-decoration: none;
+
+				i {
+					color: $sidebar-icon;
+					vertical-align: middle;
+				}
+
+				.title {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					vertical-align: middle;
+				}
+			}
+
+			&:hover:not(.selected) a {
+				background-color: lighten($sidebar-bg, 5%);
+			}
+
+			&:active:not(.selected) a {
+				background-color: $sidebar-highlight-bg;
+				color: $sidebar-highlight-text;
+
+				i {
+					color: $sidebar-highlight-icon;
+				}
+			}
+
+			&.selected a {
+				background-color: $sidebar-selected-bg;
+				color: $sidebar-selected-text;
+				-webkit-font-smoothing: subpixel-antialiased;
+
+				i {
+					color: $sidebar-selected-icon;
+				}
+			}
+		}
+	}
+}

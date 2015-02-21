@@ -1,0 +1,44 @@
+{>main/}
+
+{<header}
+{>header/}
+{/header}
+
+{<sidebar}
+{>sidebar/}
+{/sidebar}
+
+{<main_view}
+<div class="content">
+	<div class="content-header">
+		<h2>Preferences</h2>
+	</div>
+	<div class="tab-container">
+		<div class="tab-pane">
+			<ul class="side-tab-bar categories">
+				{#categories}
+				<li{?selected} class="selected"{/selected}><a href="#/{route}"><i class="{icon}"></i> <span class="title">{title}</span></a></li>
+				{/categories}
+			</ul>
+		</div>
+		<div class="tab-view">
+			{#details.sections}
+			<div class="card">
+				<h3><i class="{icon}"></i> {title}</h3>
+				<ul>
+					{#options}
+					{@select key=type}
+					{@eq value="toggle"}<li{?selected} class="selected"{/selected}><label><span class="title">{title}</span> <input type="checkbox" /></label></li>{/eq}
+					{/select}
+					{/options}
+				</ul>
+			</div>
+			{/details.sections}
+		</div>
+	</div>
+</div>
+{/main_view}
+
+{<banner}
+{>banner/}
+{/banner}

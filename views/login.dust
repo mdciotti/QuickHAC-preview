@@ -1,0 +1,28 @@
+{>main/}
+
+{<main_view}
+<div class="login">
+	<div class="logo">
+		<i class="fa fa-rocket"></i>
+		<span class="message-welcome">
+			Welcome to
+			<span class="app-name">Quick<span>HAC</span></span>
+		</span>
+	</div>
+	<form class="panel login-panel" name="login" id="login">
+		<div class="split-button-group">
+			<label><input type="radio" name="district" value="RRISD" checked tabindex="1" /> <span>RRISD</span></label>
+			<label><input type="radio" name="district" value="AISD" tabindex="2" /> <span>AISD</span></label>
+		</div>
+		<button class="button-login" type="submit" tabindex="6" disabled><span class="available">Login <i class="icon-log-in"></i></span><span class="busy">Logging in&hellip;</span></button>
+		<div class="input-group">
+			<label class="text-input input-username"><input type="text" name="username" placeholder="HAC Username" tabindex="3" autocomplete="off" required autofocus /><i class="icon-person"></i></label>
+			<label class="text-input input-password"><input type="password" name="password" placeholder="HAC Password" tabindex="4" autocomplete="off" required /><i class="icon-key"></i></label>
+			<a href="https://accesscenter.roundrockisd.org/homeaccess/Register/ForgotCredentials.aspx" target="_blank" class="forgot-password">Lost your password?</a>
+			{!<label class="text-input input-id"><input type="text" name="id" placeholder="Student ID" tabindex="5" autocomplete="off" required pattern="\d+" /><i class="icon-card"></i></label>!}
+		</div>
+		<i class="icon-ionic busy-indicator"></i>
+	</form>
+</div>
+<footer><small>&copy; 2013. Version {global.version}</small></footer>
+{/main_view}

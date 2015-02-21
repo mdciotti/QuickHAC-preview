@@ -1,0 +1,142 @@
+
+header {
+	height: $header-height;
+	flex: 0 0 auto;
+	background-color: $header-bg;
+	background-image: $header-img;
+	background-size: 360px $header-height;
+	display: flex;
+	color: $header-text;
+
+	h1 {
+		flex: 0 0 auto;
+		width: $sidebar-width;
+		margin: 0;
+		padding: 0 $gutter-width / 2;
+		display: flex;
+		line-height: $header-height;
+		color: $header-logo;
+		-webkit-font-smoothing: antialiased;
+
+		i {
+			flex: 0 0 auto;
+			width: $header-height;
+			line-height: $header-height - $gutter-width;
+			font-size: $header-height - $gutter-width;
+			padding: $gutter-width / 2;
+			text-align: center;
+			display: block;
+		}
+
+		.app-name {
+			flex: 1 1 auto;
+			font-weight: $font-weight-base;
+
+			span {
+				font-weight: $font-weight-black;
+			}
+		}
+	}
+
+	.action-bar {
+		flex: 1 1 auto;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.action-bar > li, .popover-button {
+		flex: 0 0 auto;
+		color: inherit;
+
+		&:hover {
+			background-color: $header-highlight-bg;
+			color: $header-highlight-text;
+		}
+
+		& > i, & > label > i {
+			width: $header-height;
+			text-align: center;
+			font-size: $header-icon-size;
+			display: block;
+			line-height: $header-height;
+		}
+
+		& > i:active, & > label > i:active {
+			-webkit-transform: scale(0.9);
+		}
+	}
+
+	.menu {
+		// flex: 1 1 auto;
+		// text-align: right;
+		display: flex;
+		-webkit-font-smoothing: antialiased;
+		font-weight: $font-weight-normal;
+
+		& > i {
+			flex: 0 1 auto;
+			width: $header-height;
+			line-height: $header-height;
+			// padding: 8px;
+			text-align: center;
+		}
+
+		ul {
+			font-size: $font-size-base;
+			flex: 0 1 auto;
+			top: $header-height;
+			-webkit-transform: translate3d(0, -$gutter-width, 0);
+
+			li {
+
+				i {
+					color: $menu-icon;
+					margin-right: 4px;
+				}
+
+				a {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+			}
+		}
+
+		// &:hover ul {
+		// 	-webkit-transform: translate3d(0, 0, 0);
+		// }
+	}
+
+	.student-panel {
+		flex: 0 1 auto;
+
+		label > i {
+			display: inline-block;
+			font-size: inherit;
+		}
+
+		ul {
+			width: 200px;
+			background-color: $content-empty-text;
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+			color: $body-text;
+			// top: $header-height + 16px;
+
+			li {
+				a {
+					display: block;
+					padding: $gutter-width / 2;
+				}
+
+				&:hover {
+					color: $color;
+				}
+			}
+		}
+	}
+}

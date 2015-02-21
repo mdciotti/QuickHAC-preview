@@ -1,0 +1,23 @@
+<div class="sidebar">
+	<ul class="views">
+		{#views}
+		<li{?selected} class="selected"{/selected}><a href="#/student/{global.studentID}/{route}"><i class="{icon}"></i> <span class="title">{title}</span></a></li>
+		{/views}
+	</ul>
+	<h2>Courses</h2>
+	<ul class="courses">
+		{#courses}
+		<li{?selected} class="selected"{/selected}><a href="#/student/{global.studentID}/course/{period}/cycle/{global.cycle}"><span class="title">{title}</span> <span class="average">{average}</span></a></li>
+		{/courses}
+	</ul>
+	{!<h2>GPA</h2>
+	<ul>
+		<li><a href="#/gpa">4.00</a></li>
+	</ul>!}
+	<h2>More</h2>
+	<ul>
+		{#appmenu}
+		<li{?selected} class="selected"{/selected}><a href="{url}"{?external} target="_blank"{/external}><i class="{icon}"></i> <span class="title">{title}</span></a></li>
+		{/appmenu}
+	</ul>
+</div>

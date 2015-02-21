@@ -1,0 +1,26 @@
+{>main/}
+
+{<main_view}
+<div class="welcome">
+	<div class="logo">
+		<i class="fa fa-rocket"></i>
+		<span class="message-welcome">
+			Welcome to
+			<span class="app-name">Quick<span>HAC</span></span>
+		</span>
+	</div>
+	<div class="panel welcome-panel" id="welcome">
+		<div class="student-list">
+			{#students}
+			<label class="student">
+				<i class="icon-person"></i>
+				<h3 class="name">{name}</h3>
+				<p class="school">{school}</p>
+				<input type="checkbox" tabindex="{@idx}{.}{/idx}" />
+			</label>
+			{/students}
+		</div>
+		<button disabled>Start</button>
+	</div>
+</div>
+{/main_view}

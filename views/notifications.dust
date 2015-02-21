@@ -1,0 +1,17 @@
+<ul class="notifications">
+	{#notifications}
+	<li>
+		<a href="#/{route}" class="card{?unread} unread{/unread}">
+			<i class="main {icon}"></i>
+			<div class="notification-content">
+				<h2>{title}</h2>
+				<p>{message}</p>
+				<p class="soft"><small>{detail|s}</small></p>
+				<i class="close icon-close"></i>
+			</div>
+		</a>
+	</li>
+	{:else}
+	<li><p class="message-empty">No Notifications</p></li>
+	{/notifications}
+</ul>

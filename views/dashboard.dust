@@ -1,0 +1,31 @@
+{>main/}
+
+{<header}
+{>header/}
+{/header}
+
+{<sidebar}
+{>sidebar/}
+{/sidebar}
+
+{<main_view}
+<div class="dashboard">
+	<div class="card">
+		<h2>Trends</h2>
+		<div id="plot-trend"></div>
+	</div>
+	<div class="split">
+		<div class="card">
+			<h2>Recent Grades</h2>
+		</div>
+		<div class="card">
+			<h2>GPA</h2>
+
+		</div>
+	</div>
+</div>
+{/main_view}
+
+{<banner}
+{>banner/}
+{/banner}

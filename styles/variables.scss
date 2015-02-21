@@ -1,0 +1,191 @@
+
+// http://flatuicolors.com/
+$turquoise: #1abc9c;
+$green-sea: #16a085;
+
+$emerald: #2ecc71;
+$nephritis: #27ae60;
+
+$petermann-river: #3498db;
+$petermann-river-light: #5cade2; // lighten($petermann-river, 35%);
+$petermann-river-dark: #2c81ba;
+$belize-hole: #2980b9;
+
+$amethyst: #9b59b6;
+$wisteria: #8e44ad;
+
+$wet-asphalt: #34495e;
+$midnight-blue: #2c3e50;
+
+$sun-flower: #f1c40f;
+$sun-flower-light: lighten($sun-flower, 25%);
+$orange: #f39c12;
+
+$carrot: #e67e22;
+$pumpkin: #d35400;
+
+$alizarin: #e74c3c;
+$pomegranate: #c0392b;
+
+$clouds: #ecf0f1;
+$silver: #bdc3c7;
+
+$concrete: #95a5a6;
+$asbestos: #7f8c8d;
+
+$header-height: 48px;
+$sidebar-width: 256px;
+$tab-pane-width: 192px;
+$gutter-width: 16px;
+$header-icon-size: 32px;
+
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+// $font-stack: 'Lato', 'Helvetica Neue', Helvetica;
+// $font-size-base: 16px;
+// $font-size-sidebar: 16px;
+// $font-weight-base: 300;
+// $font-weight-heavy: 600;
+
+// body[data-color="turquoise"] %theme-color-text { color: $turquoise !important; }
+// body[data-color="emerald"] %theme-color-text { color: $emerald !important; }
+// body[data-color="petermann-river"] %theme-color-text { color: $petermann-river !important; }
+// body[data-color="amethyst"] %theme-color-text { color: $amethyst !important; }
+// body[data-color="sun-flower"] %theme-color-text { color: $sun-flower !important; }
+// body[data-color="carrot"] %theme-color-text { color: $carrot !important; }
+// body[data-color="pomegranate"] %theme-color-text { color: $pomegranate !important; }
+// body[data-color="concrete"] %theme-color-text { color: $concrete !important; }
+
+// body[data-color="turquoise"] %theme-color-bg { background-color: $turquoise !important; }
+// body[data-color="emerald"] %theme-color-bg { background-color: $emerald !important; }
+// body[data-color="petermann-river"] %theme-color-bg { background-color: $petermann-river !important; }
+// body[data-color="amethyst"] %theme-color-bg { background-color: $amethyst !important; }
+// body[data-color="sun-flower"] %theme-color-bg { background-color: $sun-flower !important; }
+// body[data-color="carrot"] %theme-color-bg { background-color: $carrot !important; }
+// body[data-color="pomegranate"] %theme-color-bg { background-color: $pomegranate !important; }
+// body[data-color="concrete"] %theme-color-bg { background-color: $concrete !important; }
+
+// #test2 {
+// 	#test {
+// 		@extend %theme-color-text;
+// 	}
+// }
+
+// @if $theme == ios {
+	$font-stack: 'Helvetica Neue', Helvetica;
+	$font-size-base: 16px;
+	$font-size-sidebar: 16px;
+	$font-weight-light: 100;
+	$font-weight-base: 300;
+	$font-weight-normal: 400;
+	$font-weight-medium: 500;
+	$font-weight-heavy: 600;
+	$font-weight-black: 700;
+
+	$white: #ffffff;
+	$black: $white - $silver;
+	// $color: $emerald;
+	// $highlight: $nephritis;
+	$color: $petermann-river;
+	$highlight: $belize-hole;
+
+	$app-bg: url('../images/bg-desktop.jpg');
+	$app-icon-color: transparentize($white, 0.5);
+	$app-icon-size: 128px;
+	$app-welcome-text: $clouds;
+	$footer-text: $clouds;
+	$body-bg: $clouds;
+	$body-text: $black;
+	$body-header: $asbestos;
+	$link-text: $color;
+	$link-text-light: $clouds;
+	$link-hover-text: $color;
+	$header-bg: $color;
+	$header-img: url("../images/banner.png");
+	$header-text: $white;
+	$header-logo: $white;
+	$header-selected-bg: $clouds;
+	$header-selected-text: $black;
+	$header-highlight-bg: rgba(255,255,255,0.25);
+	$header-highlight-text: $white;
+	$menu-bg: darken($asbestos, 20%);
+	$menu-text: $clouds;
+	$menu-icon: $silver;
+	$menu-hover-bg: lighten($menu-bg, 5%);
+	$menu-hover-text: $menu-text;
+	$menu-highlight-bg: $color;
+	$menu-highlight-text: $clouds;
+	$sidebar-bg: darken($asbestos, 20%);
+	$sidebar-text: $clouds;
+	$sidebar-heading: $silver;
+	$sidebar-separator: $asbestos;
+	$sidebar-icon: $silver;
+	$sidebar-selected-bg: $clouds;
+	$sidebar-selected-text: $color;
+	$sidebar-selected-icon: $color;
+	$sidebar-hover-bg: lighten($sidebar-bg, 5%);
+	$sidebar-hover-text: $sidebar-text;
+	$sidebar-highlight-bg: $color;
+	$sidebar-highlight-text: $clouds;
+	$sidebar-highlight-icon: $clouds;
+	$gpa-bg: $clouds;
+	$gpa-text: $black;
+	$banner-bg: $clouds;
+	$banner-text: $black;
+	$banner-promotion-bg: $color;
+	$banner-promotion-img: $header-img;
+	$banner-promotion-text: $clouds;
+	$panel-bg: $clouds;
+	$panel-text: $black;
+	$panel-text-soft: $concrete;
+	$panel-tabs-bg: transparentize($white, 0.75);
+	$panel-tabs-text: $clouds;
+	$panel-tabs-hover-bg: transparentize($white, 0.75);
+	$panel-tabs-hover-text: $clouds;
+	$panel-input-bg: $white;
+	$panel-input-text: $silver;
+	$panel-input-focus-text: $black;
+	$panel-input-focus-border: $color;
+	$panel-input-invalid-text: $alizarin;
+	$panel-input-invalid-border: $alizarin;
+	$panel-input-disabled-bg: $clouds;
+	$panel-input-disabled-text: $silver;
+	$panel-input-disabled-border: $silver;
+	$panel-submit-bg: $color;
+	$panel-submit-text: $clouds;
+	$panel-submit-disabled-bg: $color;
+	$panel-submit-disabled-text: $clouds;
+	$panel-submit-active-bg: $belize-hole;
+	$panel-submit-active-text: $clouds;
+	$panel-spinner: $color;
+	$content-empty-text: $silver;
+	$card-bg: $white;
+	$card-text: $black;
+	$card-text-light: $concrete;
+	$card-text-alert: $alizarin;
+	$card-text-highlight: $sun-flower;
+
+// }
+
+@mixin scroll-pane {
+	flex: 1 1 auto;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: $body-bg;
+}
+
+@mixin dropshadow {
+	box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+}
+
+@-webkit-keyframes shake {
+	0%, 100% { -webkit-transform: translate3d(0, 0, 0); }
+	10%, 50%, 90% { -webkit-transform: translate3d(-10px, 0, 0); }
+	30%, 70% { -webkit-transform: translate3d(10px, 0, 0); }
+}
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}

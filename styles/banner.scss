@@ -1,0 +1,36 @@
+.banner {
+	// position: absolute;
+	// bottom: 0;
+	font-size: 16px;
+	flex: 0 0 auto;
+	// width: 100%;
+	padding: 8px;
+	// height: 32px;
+	text-align: center;
+	background-color: $banner-bg;
+	color: $banner-text;
+
+	&.promotion {
+		background-color: $banner-promotion-bg;
+		background-image: $banner-promotion-img;
+		background-size: 720px $header-height;
+		color: $banner-promotion-text;
+	}
+
+	.message-banner {
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+	}
+
+	.close {
+		float: right;
+		// opacity: 0;
+	}
+
+	// &:hover .close {
+	// 	opacity: 1;
+	// }
+}

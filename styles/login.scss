@@ -1,0 +1,304 @@
+
+.login {
+	flex: 0 0 auto;
+	// width: 332px;
+	display: flex;
+	align-self: center;
+	align-items: flex-start;
+
+	.logo {
+		flex: 0 0 auto;
+		margin-right: 2 * $gutter-width;
+		text-align: center;
+
+		i {
+			font-size: $app-icon-size;
+			display: block;
+			height: $app-icon-size;
+			color: $app-icon-color;
+			// text-shadow: 0 2px rgba(0,0,0,0.2);
+		}
+
+		.message-welcome {
+			display: block;
+			font-size: 1.5 * $font-size-base;
+			margin-top: $gutter-width;
+			color: $app-welcome-text;
+			line-height: 1.2;
+		}
+	}
+
+	.panel {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		-webkit-transform: perspective(100px) translate3d(0, 0, 0);
+		opacity: 1;
+		-webkit-transition: -webkit-transform 0.5s $ease-out-back, opacity 0.5s $ease-out-expo;
+
+		.split-button-group {
+			display: flex;
+			flex: 0 0 auto;
+			order: 1;
+			padding: $gutter-width $gutter-width 0 $gutter-width;
+			background-color: $panel-tabs-bg;
+			width: 100%;
+
+			label {
+				flex: 1 1 auto;
+
+				&:hover span {
+					background: $panel-tabs-hover-bg;
+					color: $panel-tabs-hover-text;
+				}
+
+				input[type="radio"] {
+					display: none;
+
+					&:disabled + span {
+						color: $panel-input-disabled-border;
+					}
+					&:checked + span {
+						background-color: $panel-bg;
+						color: $panel-input-focus-border;
+					}
+				}
+				span {
+					display: block;
+					text-align: center;
+					font-size: $font-size-base;
+					font-weight: $font-weight-medium;
+					padding: 8px 12px;
+					outline: none;
+					color: $panel-tabs-text;
+					letter-spacing: 1px;
+				}
+			}
+		}
+
+		.input-group {
+			@include dropshadow;
+
+			background-color: $panel-bg;
+			padding: $gutter-width;
+			position: relative;
+			width: 100%;
+			flex: 0 0 auto;
+			order: 2;
+
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: -$gutter-width;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				width: 0;
+				height: 0;
+				border-right: $gutter-width solid $panel-bg;
+				border-top: $gutter-width solid transparent;
+				border-bottom: $gutter-width solid transparent;
+			}
+
+			& > label {
+				display: block;
+				position: relative;
+				margin-bottom: 12px;
+
+				input + i {
+					display: block;
+					float: right;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 12px;
+					margin: auto;
+					height: 1em;
+					width: 1em;
+					color: $panel-input-text;
+					font-size: 1.5em;
+				}
+				input:focus + i {
+					color: $panel-input-focus-border;
+				}
+				input.invalid + i {
+					color: $panel-input-invalid-text;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			a {
+				color: $panel-text-soft;
+				display: block;
+				font-size: 0.8 * $font-size-base;
+				text-decoration: none;
+				text-align: center;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		input[type="text"], input[type="password"] {
+			width: 100%;
+			background-color: $panel-input-bg;
+			border: 2px solid $panel-input-bg;
+			font-size: $font-size-base;
+			color: $panel-input-focus-text;
+			font-weight: $font-weight-base;
+			padding: 8px 36px 8px 12px;
+			font-family: $font-stack;
+			display: block;
+			outline: none;
+
+			&:disabled {
+				background-color: $panel-input-disabled-bg;
+				border-color: $panel-input-disabled-text;
+				color: $panel-input-disabled-text;
+			}
+			&:focus {
+				border-color: $panel-input-focus-border;
+			}
+			&.invalid {
+				border-color: $panel-input-invalid-border;
+			}
+		}
+
+		button {
+			flex: 0 0 auto;
+			order: 3;
+			display: block;
+			font-size: $font-size-base;
+			font-weight: $font-weight-base;
+			padding: 12px 16px;
+			border: none;
+			background-color: $panel-submit-bg;
+			opacity: 0.5;
+			margin: 0;
+			width: calc(100% - 32px);
+			color: $panel-submit-text;
+			outline: none;
+			box-shadow: 0 2px rgba(0,0,0,0.15);
+			-webkit-transform: translate3d(0, -16px, 0);
+			-webkit-transition: -webkit-transform 0.5s $ease-out-expo, opacity 0.5s $ease-out-expo;
+
+			.available {
+				display: block;
+			}
+
+			.busy {
+				display: none;
+			}
+
+			&:focus:not(:hover) {
+				// background-color: $theme-light;
+				// color: $theme-color;
+				-webkit-transform: translate3d(0, 0, 0);
+				opacity: 0.8;
+			}
+			&:hover:not(:disabled) {
+				-webkit-transform: translate3d(0, 0, 0);
+				opacity: 0.8;
+			}
+			&:active:not(:disabled) {
+				background-color: $panel-submit-active-bg;
+				color: $panel-submit-active-text;
+			}
+			&:disabled {
+				-webkit-transform: translate3d(0, -100%, 0);
+				background-color: $panel-submit-disabled-bg;
+				color: $panel-submit-disabled-text;
+				opacity: 0;
+			}
+		}
+
+		& > a {
+			padding: ($gutter-width / 2) 0;
+			color: $link-text-light;
+			display: block;
+			text-align: center;
+			outline: none;
+			// display: none;
+			flex: 1 1 auto;
+			order: 3;
+			opacity: 0.75;
+			text-decoration: none;
+			text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+
+			&:hover, &:focus {
+				text-decoration: underline;
+				opacity: 1;
+			}
+			&:active {
+				color: $color;
+			}
+		}
+
+		.busy-indicator {
+			display: block;
+			box-sizing: border-box;
+			color: $panel-spinner;
+			font-size: 120px;
+			// border: 14px dotted $panel-spinner;
+			// border-radius: 50px;
+			display: block;
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto;
+			width: 120px; //89px;
+			height: 120px; //89px;
+			-webkit-animation-name: spin;
+			-webkit-animation-duration: 2s;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-timing-function: linear;
+			-webkit-transition: all 0.5s linear;
+			opacity: 0;
+		}
+
+		&.busy {
+			-webkit-transform: perspective(100px) translate3d(0, 0, -10px);
+			opacity: 0.5;
+
+			.busy-indicator {
+				z-index: 100;
+				opacity: 1;
+			}
+
+			button {
+				-webkit-transform: translate3d(0, 0, 0);
+				opacity: 0.8;
+				// background-color: $theme-card;
+				// color: $theme-card-shadow;
+
+				.available {
+					display: none;
+				}
+
+				.busy {
+					display: block;
+				}
+			}
+		}
+
+		&.invalid {
+			-webkit-animation-name: shake;
+			-webkit-animation-duration: 0.5s;
+			-webkit-animation-delay: 0.5s;
+			-webkit-animation-timing-function: linear;
+		}
+	}
+}
+
+.login + footer {
+	color: $footer-text;
+}

@@ -1,0 +1,40 @@
+<header>
+	<h1>
+		<i class="fa fa-rocket"></i>
+		<span class="app-name">Quick<span>HAC</span></span>
+	</h1>
+	<span class="flex-space"></span>
+	<ul class="action-bar">
+		{#actions}
+		<li data-tip="{title}"><i class="{icon}"></i></li>
+		{/actions}
+	</ul>
+	<div data-tip="Notifications" class="popover-button">
+		<label>
+			<input type="radio" name="focus" class="dropdown-toggle" />
+			<span class="popover-title"></span>
+			<i class="icon-ios7-bell"></i>
+			<div class="popover">
+				{>notifications/}
+			</div>
+			<div class="popover-triangle"></div>
+		</label>
+	</div>
+	<div class="student-panel popover-button">
+		<label>
+			<input type="radio" name="focus" class="dropdown-toggle" />
+			<span class="popover-title">{global.studentName}</span>
+			<i class="icon-chevron-down"></i>
+			<div class="popover">
+				<ul>
+					{#students}
+					<li><a href="#/student/{id}"><i class="icon-person" data-color="{color}"></i> <span class="title">{name}</span></a></li>
+					{/students}
+					<li><a href="#/student/add"><i class="icon-person-add"></i> <span class="title">Add Student</span></a></li>
+					<li><a href="#/student/guest"><i class="icon-briefcase"></i> <span class="title">Guest Mode</span></a></li>
+				</ul>
+			</div>
+			<div class="popover-triangle"></div>
+		</label>
+	</div>
+</header>

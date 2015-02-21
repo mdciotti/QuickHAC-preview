@@ -1,0 +1,80 @@
+{>main/}
+
+{<header}
+{>header/}
+{/header}
+
+{<sidebar}
+{>sidebar/}
+{/sidebar}
+
+{<main_view}
+<div class="content">
+	{?details}
+	<div class="content-header">
+		<h2>{details.courseTitle}</h2>
+		<ul class="course-details">
+			<li class="course-teacher">{details.teacherName} <a href="mailto:{details.teacherEmail}"><i class="icon-email"></i></a></li>
+			<li class="course-period">Period {details.coursePeriod}</li>
+			<li class="course-average">{details.cycleAverage}</li>
+			<li class="course-goal">{details.courseGoal}</li>
+		</ul>
+		<p class="message-updated">Updated {details.lastUpdated}</p>
+		<ul class="tab-bar">
+			<li class="selected"><a href="#/student/{global.studentID}/course/{details.coursePeriod}/cycle/1">Cycle 1</a></li>
+			<li><a href="#/student/{global.studentID}/course/{details.coursePeriod}/cycle/2">Cycle 2</a></li>
+			<li><a href="#/student/{global.studentID}/course/{details.coursePeriod}/cycle/3">Cycle 3</a></li>
+			<li><a href="#/student/{global.studentID}/course/{details.coursePeriod}/cycle/4">Cycle 4</a></li>
+			<li><a href="#/student/{global.studentID}/course/{details.coursePeriod}/cycle/5">Cycle 5</a></li>
+			<li><a href="#/student/{global.studentID}/course/{details.coursePeriod}/cycle/6">Cycle 6</a></li>
+		</ul>
+	</div>
+	{:else}
+	<div class="message-empty"><i class="fa fa-hand-o-left"></i> Select a class from the left to view grades</div>
+	{/details}
+	<div class="column">
+		{#details.categories}
+		<div class="card">
+			<h2>{title} <span class="percent">{weight}</span></h2>
+			{?assignments}
+			<table>
+				<thead>
+					<tr>
+						<th>Assignment</th>
+						<th class="date">Assigned</th>
+						<th class="date">Due</th>
+						<th class="numeric">Points</th>
+						<th>Notes</th>
+					</tr>
+				</thead>
+				<tbody>
+					{#assignments}
+					<tr class="{#flags} {?dropped}dropped{/dropped} {?extraCredit}extra-credit{/extraCredit} {?hasNote}has-note{/hasNote} {?missing}missing{/missing}{/flags}">
+						<td>{title}</td>
+						<td class="date">{dateAssigned}</td>
+						<td class="date">{dateDue}</td>
+						<td class="numeric">{ptsEarned}{?weight}<span class="soft"> &times; {weight}</span>{/weight}</td>
+						<td>{note}</td>
+					</tr>
+					{/assignments}
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3">Average</td>
+						<td class="numeric">{average}</td>
+						<td colspan="3"></td>
+					</tr>
+				</tfoot>
+			</table>
+			{:else}
+			<div class="message-empty">No grades</div>
+			{/assignments}
+		</div>
+		{/details.categories}
+	</div>
+</div>
+{/main_view}
+
+{<banner}
+{>banner/}
+{/banner}

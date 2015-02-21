@@ -1,0 +1,84 @@
+
+ul.notifications {
+	background-color: $panel-bg;
+	padding: $gutter-width / 2;
+	border: thin solid $content-empty-text;
+	margin: 0;
+	width: 360px;
+
+	.card {
+		position: relative;
+		margin-bottom: 8px;
+		opacity: 0.5;
+		min-height: 64px;
+		text-align: left;
+		display: flex;
+
+		&.unread {
+			opacity: 1;
+		}
+
+		i.main {
+			float: left;
+			text-align: center;
+			font-size: 64px;
+			width: 64px;
+			height: 100%;
+			line-height: 64px;
+			margin: 0 $gutter-width 0 0;
+			color: $content-empty-text;
+			flex: 0 0 auto;
+		}
+
+		i.close {
+			color: $content-empty-text;
+			height: 16px;
+			width: 16px;
+			font-size: 16px;
+			position: absolute;
+			top: 4px;
+			right: 4px;
+			margin: 0;
+			opacity: 0;
+			transition: opacity 0.2s $ease-out-expo;
+		}
+
+		&:hover i.close {
+			opacity: 1;
+		}
+
+		.notification-content {
+			flex: 1 1 auto;
+
+			h2 {
+				margin: 0;
+				font-weight: $font-weight-medium;
+				color: $card-text;
+				font-size: 14px;
+				line-height: 1.5;
+			}
+
+			p {
+				margin: 0;
+				font-size: 14px;
+				color: $card-text;
+				line-height: 1.2;
+			}
+
+			p.soft {
+				margin-top: 0.5em;
+				color: $card-text-light;
+
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+			}
+		}
+	}
+
+	li:last-child a {
+		margin-bottom: 0;
+	}
+}

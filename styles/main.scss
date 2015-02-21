@@ -1,0 +1,89 @@
+
+$theme: ios;
+$fa-font-path: '../fonts/FontAwesome';
+@import '../lib/font-awesome-4.0.1/scss/font-awesome.scss';
+@import '../fonts/Lato/Lato.css';
+@import '../fonts/ionicons/ionicons.css';
+
+@import 'variables.scss';
+@import 'login.scss';
+@import 'components.scss';
+@import 'banner.scss';
+@import 'sidebar.scss';
+@import 'header.scss';
+@import 'notifications.scss';
+@import 'content.scss';
+@import 'dashboard.scss';
+
+* { box-sizing: border-box; }
+
+html {
+	background-color: $wet-asphalt;
+}
+
+body{
+	margin: 0 auto;
+}
+
+#preview {
+	height: 100%;
+	width: 100%;
+	outline: 8px solid $clouds;
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+
+	// height: 100%;
+	// margin: 0;
+	background-color: $body-bg;
+	color: $body-text;
+	display: flex;
+	flex-direction: column;
+	font-family: $font-stack;
+	font-weight: $font-weight-base;
+	line-height: 1;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+a:link, a:visited {
+	color: $link-text;
+}
+
+a[href^="#"] {
+	cursor: default;
+	color: inherit;
+	text-decoration: none;
+}
+
+// a:after {
+// 	content: $fa-var-external-link;
+// 	font-family: FontAwesome;
+// 	margin-left: 8px;
+// 	font-style: normal;
+// 	font-weight: normal;
+// 	line-height: 1;
+// 	-webkit-font-smoothing: antialiased;
+// }
+
+.main-view {
+	flex: 1 1 auto;
+	display: flex;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	background-color: $color;
+	background-image: $app-bg;
+	background-size: cover;
+	background-position: center;
+	justify-content: center;
+
+	canvas#bg {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
+}
