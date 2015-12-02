@@ -6,8 +6,9 @@ TEMPLATES = banner.dust dashboard.dust course.dust header.dust login.dust main.d
 SCRIPT_COMPILER = tsc
 SCRIPT_COMPILER_OPTS = -t 'ES5'
 SCRIPT_SRC_DIR = scripts
-SCRIPT_OUT_DIR = compiled_scripts
-SCRIPTS = common.ts login.ts welcome.ts
+# SCRIPT_OUT_DIR = compiled_scripts
+SCRIPT_OUT_DIR = dist/js
+SCRIPTS = login.ts welcome.ts
 
 STYLE_ENGINE = sass
 STYLE_SRC_DIR = styles
@@ -26,8 +27,9 @@ $(STYLES):
 scripts: clear_scripts $(SCRIPTS)
 
 $(SCRIPTS):
+	# $(SCRIPT_COMPILER) $(SCRIPT_COMPILER_OPTS) $(SCRIPT_SRC_DIR)/$@ --outDir $(SCRIPT_OUT_DIR)
 	$(SCRIPT_COMPILER) $(SCRIPT_COMPILER_OPTS) $(SCRIPT_SRC_DIR)/$@ --out $(SCRIPT_OUT_DIR)/$(addsuffix .js, $(basename $@))
-	cat $(SCRIPT_OUT_DIR)/$(addsuffix .js, $(basename $@)) >> dist/js/scripts.js
+	# cat $(SCRIPT_OUT_DIR)/$(addsuffix .js, $(basename $@)) >> dist/js/scripts.js
 
 templates: clear_templates $(TEMPLATES)
 
@@ -38,7 +40,8 @@ $(TEMPLATES):
 clean: clear_scripts clear_templates
 
 clear_scripts:
-	rm -f dist/js/scripts.js
+	# rm -f $(SCRIPT_OUT_DIR)/.js
+	# rm -f dist/js/scripts.js
 
 clear_templates:
 	rm -f dist/js/templates.js

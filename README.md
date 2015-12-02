@@ -6,6 +6,11 @@ This repository contains the design mockups for the upcoming version 3.0 of Quic
 
 Please keep in mind that because this is for a Chrome extension, only Chrome is supported. Layouts will most likely be broken in other browsers.
 
+See the [demo](http://mdciotti.github.io/quickhac-preview/dist/) for the interactive prototype.
+
+* Username: `admin`
+* Password: `abc`
+
 ## Installation
 
 You will need to run `bower install` in order to install all dependencies. This means you need [Bower](http://bower.io). You will also need [TypeScript](http://www.typescriptlang.org/) if you plan on editing scripts.
@@ -65,7 +70,7 @@ If you add a new style, make sure to add an `@import` rule for it in the `main.s
 * Templates (DustJS)
 * Basic framework (router)
 
-## Ideas 
+## Ideas
 
 * Pull to refresh (mobile)
 * Pin (freeze) course grade edits
