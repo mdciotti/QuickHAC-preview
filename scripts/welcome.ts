@@ -9,7 +9,7 @@ var Welcome = {
 
 		var studentNodeList = document.querySelectorAll(".welcome .panel .student-list .student");
 
-		forEachNode(studentNodeList, function (el) {
+		Array.prototype.slice.call(studentNodeList, function (el) {
 			el.querySelector("input").addEventListener("change", Welcome.validate, false);
 		});
 

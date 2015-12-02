@@ -13,7 +13,8 @@ var LoginForm = {
 		form["password"].addEventListener("input", LoginForm.validate.bind(null, form), false);
 		// form["id"].addEventListener("input", LoginForm.validate.bind(null, form), false);
 
-		forEachNode(document.querySelectorAll(".split-button-group input"), function (el) {
+		var elements = document.querySelectorAll(".split-button-group input");
+		Array.prototype.slice.call(elements, function (el) {
 			el.addEventListener("change", function (e) {
 
 				var district = el.value;
@@ -63,7 +64,8 @@ var LoginForm = {
 	// Disable form
 	disable: function (form) {
 		form.classList.add("busy");
-		forEachNode(form.querySelectorAll(".split-button-group input"), function (el) {
+		var elements = form.querySelectorAll(".split-button-group input");
+		Array.prototype.slice.call(elements, function (el) {
 			el.disabled = true;
 		});
 		form["username"].disabled = true;
@@ -75,7 +77,8 @@ var LoginForm = {
 	// Enable form
 	enable: function (form) {
 		form.classList.remove("busy");
-		forEachNode(form.querySelectorAll(".split-button-group input"), function (el) {
+		var elements = form.querySelectorAll(".split-button-group input");
+		Array.prototype.slice.call(elements, function (el) {
 			el.disabled = false;
 		});
 		form["username"].disabled = false;
@@ -95,12 +98,15 @@ var LoginForm = {
 				form.classList.remove("invalid");
 			}, 3000);
 			console.error("Unable to log in.");
+			form["username"].value = "admin";
+			form["password"].value = "abc";
 			return;
 		}
 		// Login succeeded
 		// Setup students
 		// Navigate to welcome/setup screen
-		router.navigate("welcome/1", {trigger: true, replace: true});
+		// router.navigate("welcome/1", {trigger: true, replace: true});
+		router.navigate("student/313337/dashboard", {trigger: true, replace: true});
 	},
 
 	// Check to see if credentials are of a valid format
